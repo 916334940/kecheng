@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
             MessageBox.Show(id + "登录成功");
             form.Show();
             Form8 form2 = new Form8();
-
+            MessageBox.Show("1");
             this.Hide();
             int id1 = 2;
             MessageBox.Show(id + "登录成功");
