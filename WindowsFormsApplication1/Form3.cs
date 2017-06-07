@@ -26,7 +26,8 @@ namespace WindowsFormsApplication1
 
         private void Form3_Load(object sender, EventArgs e)
         {
-           
+            DateTime time = DateTime.Now;
+            label3.Text= "当前系统时间为：" + time.ToString();
             string constr = ConfigurationManager.AppSettings["ConnectionString"];
             try
             {
@@ -85,6 +86,11 @@ namespace WindowsFormsApplication1
         private void button5_Click(object sender, EventArgs e)
         {
            
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
 
         }
     }
