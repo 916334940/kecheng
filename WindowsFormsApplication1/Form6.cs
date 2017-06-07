@@ -119,5 +119,10 @@ namespace WindowsFormsApplication1
             Form3 form1 = new Form3(zh,r,w);
             form1.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
