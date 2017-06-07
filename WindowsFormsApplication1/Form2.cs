@@ -95,6 +95,30 @@ namespace WindowsFormsApplication1
         private void button2_Click_1(object sender, EventArgs e)
         {
 
+            string constr = ConfigurationManager.AppSettings["ConnectionString"];
+            try
+            {
+                SqlConnection conn = new SqlConnection(constr);
+                conn.Open();
+                int id = Convert.ToInt16(comboBox1.SelectedIndex+1);
+                string cmdStr = "select * from xuanze where 课程编号 ='"+ id + "'";
+                SqlDataAdapter da = new SqlDataAdapter(cmdStr, conn);
+                 ds = new DataSet();
+                da.Fill(ds);
+                dataGridView1.DataSource = ds.Tables[0];
+
+                string cmdStr1 = "select * from judge where 课程编号 ='" + id + "'";
+                SqlDataAdapter da1 = new SqlDataAdapter(cmdStr1, conn);
+                 ds1 = new DataSet();
+                da1.Fill(ds1);
+                dataGridView2.DataSource = ds1.Tables[0];
+                conn.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("" + error);
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
