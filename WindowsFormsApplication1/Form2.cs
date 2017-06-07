@@ -192,51 +192,7 @@ namespace WindowsFormsApplication1
             {
                 return;
             }
-            try
-            {
-                DialogResult result = MessageBox.Show("确认删除吗？", "提示", MessageBoxButtons.OKCancel);
-                if (result == DialogResult.OK)
-                {
-                    //定义一个数组保存所选中的行 
-                    int[] sel_rows = new int[dataGridView2.SelectedRows.Count];
-                    for (int i = 0; i < dataGridView2.SelectedRows.Count; i++)
-                    {
-                        sel_rows[i] = dataGridView2.SelectedRows[i].Index;
-                    }
-
-                    //根据数组选择所得到的行号删除数据表 
-                    for (int i = 0; i < sel_rows.Length; i++)
-                    {
-
-                        int cid = Convert.ToInt32(dt.Rows[sel_rows[i]].ItemArray.First());
-                        int id = Convert.ToInt16(comboBox1.ValueMember + 1);
-
-                        //  string del1 = "delete  from xc where 选择题编号='" + cid + "'and 课程编号 ='" + id + "'";
-                        //   SqlCommand cmd1 = new SqlCommand(del1, conn);
-                        //   cmd1.ExecuteNonQuery();
-                        MessageBox.Show("1");
-                        string del = "delete from judge where 编号='" + cid + "'";
-                        SqlCommand cmd = new SqlCommand(del, conn);
-                        if (cmd.ExecuteNonQuery() == 0)
-                        {
-                            MessageBox.Show("未知错误!");
-                            return;
-                        }
-                        else
-                        {
-                            this.Close();
-                            Form2 form1 = new Form2(zh);
-                            form1.Show();
-                            MessageBox.Show("课程删除成功");
-                        }
-                    }
-                }
-
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("删除失败" + error);
-            }
+           
         }
 
         private void button5_Click(object sender, EventArgs e)
