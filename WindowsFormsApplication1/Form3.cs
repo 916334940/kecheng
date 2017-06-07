@@ -81,5 +81,37 @@ namespace WindowsFormsApplication1
             else
             MessageBox.Show("当前正确题数为"+r);
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form8 form = new Form8();
+
+            this.Hide();
+            int id = 1;
+            MessageBox.Show(id + "登录成功");
+            form.Show();
+            Form8 form2 = new Form8();
+            MessageBox.Show("1");
+            this.Hide();
+            int id1 = 2;
+            MessageBox.Show(id1 + "登录成功");
+            form2.Show();
+            int count = 0;
+            count++;
+
+            if (count >= 5)
+            {
+                MessageBox.Show("您已连续输错密码5次，被迫退出！", "【警告】");
+
+                System.Threading.Thread.Sleep(1000);//等待1秒  
+
+                Application.Exit();
+            }
+            else
+            {
+                MessageBox.Show("用户名、密码、登录类型不匹配，请重试！", "【提示】");
+            }
+
+        }
     }
 }
