@@ -45,7 +45,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -188,16 +187,6 @@
             this.textBox7.Size = new System.Drawing.Size(100, 21);
             this.textBox7.TabIndex = 15;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(572, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -205,7 +194,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(734, 411);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button2);
@@ -248,6 +236,5 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button3;
     }
 }
