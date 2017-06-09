@@ -61,56 +61,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox6.Text == "")
-            {
-                MessageBox.Show(this.textBox1, "填空不可以为空");
-                return;
-
-            }
-            string constr = ConfigurationManager.AppSettings["ConnectionString"];
-            try
-            {
-                SqlConnection conn = new SqlConnection(constr);
-                conn.Open();
-                string cmdStr = "select * from xuanze  where 课程编号 ='" + id + "'";
-                SqlDataAdapter da = new SqlDataAdapter(cmdStr, conn);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                if (textBox6.Text.ToString() == ds.Tables[0].Rows[id1][6].ToString())
-                {
-                    MessageBox.Show("恭喜你回答正确！");
-                    r++;
-                }
-                else
-                {
-                    MessageBox.Show(string.Format("很可惜回答错误，正确答案为{0}!", ds.Tables[0].Rows[id1][6].ToString()),"提示");
-                    w++;
-                }
-
-                string sql = "SELECT COUNT(*) FROM xuanze where 课程编号='" + id + "'";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                
-                //   MessageBox.Show(string.Format("数据库里共有{0}条记录", cmd.ExecuteScalar()), "提示");
-                if (id1 >= (Convert.ToInt16(cmd.ExecuteScalar()) - 1))
-                {
-                    this.Hide();
-                    Form3 form1 = new Form3(zh,r,w);
-                    form1.Show();
-                }
-                else
-                {
-                    this.Hide();
-            //  MessageBox.Show(comboBox1.ValueMember+1);
-            Form6 form = new Form6(id, id1+1,zh,r,w);
-            form.Show();
-                }
-
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("" + error);
-            }
-            
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
